@@ -1,0 +1,14 @@
+{
+  "hobby": [
+    {
+      "id": 1,
+      "series": "JavaScript Tutorial for Beginners",
+      "author": "Paul"
+    },
+    {
+      "id": 2,
+      "series": "TypeScript Tutorial for Beginners",
+      "author": "Bill"
+    }
+  ]
+}

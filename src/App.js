@@ -1,24 +1,31 @@
-import logo from './logo.svg'
-import './App.sass'
+// import { Button } from '@mui/material'
+import React from 'react'
+import { createTheme, ThemeProvider } from '@mui/material'
+import './style/index.sass'
+import { Home, Intro, Hobby, Experience, Goal, } from './pages'
+import { Nav, TopIcon, Footer } from './components'
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#ff8553',
+        contrastText: '#fff'
+      }
+    },
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <TopIcon />
+      <Nav />
+      <Home />
+      <Intro />
+      <Experience />
+      <Hobby />
+      <Goal />
+      <Footer />
+    </ThemeProvider >
   )
 }
 

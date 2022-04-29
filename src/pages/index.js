@@ -1,0 +1,5 @@
+export { default as Home } from "./Home/index"
+export { default as Intro } from "./Intro/index"
+export { default as Hobby } from "./Hobby/index"
+export { default as Experience } from "./Experience/index"
+export { default as Goal } from "./Goal/index"
