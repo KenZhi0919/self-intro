@@ -1,7 +1,25 @@
 import classes from './index.module.sass'
 import { Box, Container, Typography, Grid } from '@mui/material'
 import BuildIcon from '@mui/icons-material/Build'
+import { apiGetGoal } from '../../api/apiGoal'
+import { useEffect, useState } from 'react'
+import CheckIcon from '@mui/icons-material/Check'
+
 const Goal = () => {
+
+  const [goalData, setGoalData] = useState([])
+
+  useEffect(() => {
+    const fetchGoal = async () => {
+      try {
+        const { data } = await apiGetGoal()
+        setGoalData(data)
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    fetchGoal()
+  }, [])
 
   return (
     <Box component="section">
@@ -12,45 +30,29 @@ const Goal = () => {
           </Typography>
 
           <Grid container>
-            <Grid item xs={4} sx={{ borderRight: "1px solid #e8e8e8" }}>
-              <div className={classes.goalBox}>
-                <div className={classes.goalTitleRow}>
-                  <BuildIcon></BuildIcon>
-                  <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
-                    短期目標
+            {goalData && goalData.map((el, index) => (
+              <Grid key={index} item xs={4} >
+                <div className={classes.goalBox} style={{ borderRight: index + 1 === goalData.length ? '' : '1px solid #e8e8e8' }}>
+                  <div className={classes.goalTitleRow}>
+                    <BuildIcon></BuildIcon>
+                    <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
+                      {el.title}
+                    </Typography>
+                  </div>
+                  <Typography variant="subtitle1" component="div">
+                    <ul>
+                      {el.goalList && el.goalList.map((el, index) => (
+                        <li key={index}>
+                          <div className="d-flex align-center">
+                            <CheckIcon sx={{ mr: 1 }} /> {el}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
                   </Typography>
                 </div>
-                <Typography variant="subtitle1" component="div">
-                  廠民的業力不洋成親助出光雖平天，操頭社還前有得一……整政形，舞中服來不盡片一，比自不像這朋和送深善灣造！的步參少象母小望提我引心能展富際高這不臺情還間機呢又發，內聽國時個接南形稱身是汽大前能的難表學：因造們區知
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={4} sx={{ borderRight: "1px solid #e8e8e8" }}>
-              <div className={classes.goalBox}>
-                <div className={classes.goalTitleRow}>
-                  <BuildIcon></BuildIcon>
-                  <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
-                    中期目標
-                  </Typography>
-                </div>
-                <Typography variant="subtitle1" component="div">
-                  廠民的業力不洋成親助出光雖平天，操頭社還前有得一……整政形，舞中服來不盡片一，比自不像這朋和送深善灣造！的步參少象母小望提我引心能展富際高這不臺情還間機呢又發，內聽國時個接南形稱身是汽大前能的難表學：因造們區知
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
-              <div className={classes.goalBox}>
-                <div className={classes.goalTitleRow}>
-                  <BuildIcon></BuildIcon>
-                  <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
-                    長期目標
-                  </Typography>
-                </div>
-                <Typography variant="subtitle1" component="div">
-                  廠民的業力不洋成親助出光雖平天，操頭社還前有得一……整政形，舞中服來不盡片一，比自不像這朋和送深善灣造！的步參少象母小望提我引心能展富際高這不臺情還間機呢又發，內聽國時個接南形稱身是汽大前能的難表學：因造們區知
-                </Typography>
-              </div>
-            </Grid>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </div >

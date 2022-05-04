@@ -64,11 +64,9 @@ const steps = [
   "亦樂科技"
 ]
 
-export default function FlowLine() {
-  const [activeStep, setActiveStep] = React.useState(0)
-
+export default function FlowLine({ flowIndex, setFlowIndex }) {
   const handleStep = (step) => () => {
-    setActiveStep(step)
+    setFlowIndex(step)
   }
 
   return (
@@ -76,7 +74,7 @@ export default function FlowLine() {
       <Stepper
         nonLinear
         alternativeLabel
-        activeStep={activeStep}
+        activeStep={flowIndex}
         connector={<ColorlibConnector />}
       >
         {steps.map((label, index) => (

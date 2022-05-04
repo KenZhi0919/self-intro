@@ -1,14 +1,58 @@
 {
-  "hobby": [
+  "intro": {
+    "motto": "做自己，享受人生",
+    "introContent": "\u3000\u3000我是陳健誌，今年25歲，畢業於雲林科技大學資訊管理系，已有兩年的前端工程師經驗，在前公司主要是寫 Vue，目前正持續努力學習 React 中，期望自己在將來可以學習更多不同的框架及技術，朝著資深工程師的方向邁進。平常的興趣是打撞球、健身、打電玩和看動畫，如果有相同興趣的朋友歡迎找我切磋切磋，很開心能夠加入弈樂這個大家庭。"
+  },
+  "user": {
+    "name": "陳健誌",
+    "enName": "Ken Chen",
+    "positionName": "Front-End Engineer",
+    "email": "z121356777@gmail.com"
+  },
+  "experience": [
     {
-      "id": 1,
-      "series": "JavaScript Tutorial for Beginners",
-      "author": "Paul"
+      "experience": "雲林科技大學",
+      "positionName": "資訊管理系",
+      "period": "2015-2019",
+      "des": "",
+      "content": [
+        { "title": "社團", "item": ["撞球社", "滑板社", "健身社"] },
+        { "title": "專題", "item": ["默陌 Detector"] }
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/National_Yunlin_University_of_Science_and_Technology_logo.svg/1200px-National_Yunlin_University_of_Science_and_Technology_logo.svg.png"
     },
     {
-      "id": 2,
-      "series": "TypeScript Tutorial for Beginners",
-      "author": "Bill"
+      "experience": "昕力資訊",
+      "positionName": "前端工程師",
+      "period": "2020-2022",
+      "content": [
+        {
+          "title": "專案",
+          "item": ["國泰PMD績效管理系統", "昕力資訊OKR系統", "國泰職務適配系統"]
+        }
+      ],
+      "image": "https://www.tpisoftware.com/images/header/logo-tw.svg"
+    },
+    {
+      "experience": "奕樂科技",
+      "positionName": "前端工程師",
+      "period": "2022-迄今",
+      "content": [{ "title": "練習專案", "item": ["自我介紹網站"] }],
+      "image": "data:image/png;base64,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"
+    }
+  ],
+  "goal": [
+    {
+      "title": "短期目標",
+      "goalList": ["認識大家", "熟悉 React"]
+    },
+    {
+      "title": "中期目標",
+      "goalList": ["認識大家", "熟悉 React", "了解專案"]
+    },
+    {
+      "title": "長期目標",
+      "goalList": ["認識大家", "熟悉 React", "學習更多專案需要的技術"]
     }
   ]
 }

@@ -1,5 +1,6 @@
 import classes from './index.module.sass'
 import { Box, Container, Typography, Grid } from '@mui/material'
+import clsx from 'clsx'
 
 const Hobby = () => {
 
@@ -14,7 +15,7 @@ const Hobby = () => {
           <Grid container spacing={4}>
             <Grid item xs={6}>
               <div className={classes.imgBox}>
-                <div className={classes.img} />
+                <div className={clsx([classes.img, classes.poolImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
                     撞球
@@ -24,30 +25,30 @@ const Hobby = () => {
             </Grid>
             <Grid item xs={6}>
               <div className={classes.imgBox}>
-                <div className={classes.img} />
+                <div className={clsx([classes.img, classes.dumbbelImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
-                    撞球
+                    健身
                   </div>
                 </div>
               </div>
             </Grid>
             <Grid item xs={6}>
               <div className={classes.imgBox}>
-                <div className={classes.img} />
+                <div className={clsx([classes.img, classes.gamingImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
-                    撞球
+                    電玩
                   </div>
                 </div>
               </div>
             </Grid>
             <Grid item xs={6}>
               <div className={classes.imgBox}>
-                <div className={classes.img} />
+                <div className={clsx([classes.img, classes.animeImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
-                    撞球
+                    動漫
                   </div>
                 </div>
               </div>

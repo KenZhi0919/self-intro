@@ -1,6 +1,6 @@
 .hobbySection
   background-color: #fefefe
-  padding: 110px 0
+  padding: 110px 0 80px 0
   .imgBox
     height: 400px
     position: relative
@@ -8,13 +8,20 @@
     border-radius: 12px
     &:hover .img
       transform: scale(1.1)
-    .img
+    .img 
       width: 100%
       height: 100%
-      background-image: url("../../static/pool.jpg")
+      transition: .4s
       background-repeat: no-repeat
       background-size: cover
-      transition: .4s
+      &.poolImg 
+        background-image: url("../../static/Pool.jpg")
+      &.dumbbelImg 
+        background-image: url("../../static/Dumbbel.jpg")
+      &.gamingImg 
+        background-image: url("../../static/Gaming.jpg")
+      &.animeImg 
+        background-image: url("../../static/Anime.png")
     .overlay
       position: absolute
       width: 100%

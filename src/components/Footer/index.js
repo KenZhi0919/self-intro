@@ -2,8 +2,8 @@ import classes from './index.module.sass'
 import { Grid, Container } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
-const Footer = () => {
 
+const Footer = () => {
   return (
     <div className={classes.footer}>
       <Container maxWidth="lg" className="h-100">

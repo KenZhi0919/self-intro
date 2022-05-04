@@ -3,7 +3,9 @@ import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone'
 const TopIcon = () => {
   window.addEventListener('scroll', () => {
     const scroll = document.querySelector('.scorllbtn')
-    scroll.classList.toggle("active", window.scrollY > 500)
+    if (scroll) {
+      scroll.classList.toggle("active", window.scrollY > 500)
+    }
   })
 
   const scrollToTop = () => {
