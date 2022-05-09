@@ -4,10 +4,12 @@ import BuildIcon from '@mui/icons-material/Build'
 import { apiGetGoal } from '../../api/apiGoal'
 import { useEffect, useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check'
+import useStore from '../../store/store'
 
 const Goal = () => {
 
   const [goalData, setGoalData] = useState([])
+  const useAnimation = useStore(state => state.useAnimation)
 
   useEffect(() => {
     const fetchGoal = async () => {
@@ -21,9 +23,16 @@ const Goal = () => {
     fetchGoal()
   }, [])
 
+  window.addEventListener('scroll', () => {
+    const scroll = document.querySelector(`.${classes.goalSection}`)
+    if (scroll && window.scrollY > scroll.offsetTop - 350) {
+      scroll.classList.add("active")
+    }
+  })
+
   return (
     <Box component="section">
-      <div className={classes.goalSection}>
+      <div className={`${classes.goalSection} ${useAnimation ? 'moveInRight' : ''}`}>
         <Container maxWidth="lg" className="h-100" sx={{ position: "relative" }}>
           <Typography variant="h2" component="div" sx={{ fontWeight: "bold", marginBottom: "40px" }}>
             目標

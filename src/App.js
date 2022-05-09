@@ -1,10 +1,12 @@
 // import { Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material'
 import './style/index.sass'
 import { Home, Intro, Hobby, Experience, Goal, } from './pages'
 import { Nav, Footer } from './components'
 import { Routes, Route } from 'react-router-dom'
+import useStore from './store/store.js'
+import { useLocation } from 'react-router-dom'
 
 function App() {
   const theme = createTheme({
@@ -15,6 +17,13 @@ function App() {
       }
     },
   })
+
+  const location = useLocation()
+  const setUseAnimation = useStore(state => state.setUseAnimation)
+
+  useEffect(() => {
+    setUseAnimation(location.pathname === '/')
+  }, [location, setUseAnimation])
 
   return (
     <ThemeProvider theme={theme}>

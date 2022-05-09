@@ -59,3 +59,18 @@ a
 	background-color: rgb(231, 231, 231)
 	border-radius: 6px
   
+.moveInLeft
+	opacity: 0
+	transform: translateX(-100px)
+	&.active
+		opacity: 1
+		transform: translateX(0)
+		transition: 1.8s
+.moveInRight
+	opacity: 0
+	transform: translateX(100px)
+	&.active
+		opacity: 1
+		transform: translateX(0)
+		transition: 1.8s
+    

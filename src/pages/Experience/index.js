@@ -3,10 +3,13 @@ import { Box, Container, Typography, Grid } from '@mui/material'
 import { FlowLine } from '../../components'
 import { useEffect, useState } from 'react'
 import { apiGetExperience } from '../../api/apiExperience'
+import useStore from '../../store/store'
 
 const Experience = () => {
   const [experienceList, setExperienceList] = useState([{ experience: '', positionName: '', period: '', content: [], image: '' }])
   const [flowIndex, setFlowIndex] = useState(0)
+  const useAnimation = useStore(state => state.useAnimation)
+
 
   useEffect(() => {
     const fetchExperience = async () => {
@@ -20,9 +23,16 @@ const Experience = () => {
     fetchExperience()
   }, [])
 
+  window.addEventListener('scroll', () => {
+    const scroll = document.querySelector(`.${classes.experienceSection}`)
+    if (scroll && window.scrollY > scroll.offsetTop - 350) {
+      scroll.classList.add("active")
+    }
+  })
+
   return (
     <Box component="section">
-      <div className={classes.experienceSection}>
+      <div className={`${classes.experienceSection} ${useAnimation ? 'moveInLeft' : ''}`}>
         <Container maxWidth="lg" className="h-100" sx={{ position: "relative" }}>
           <Typography variant="h2" component="div" sx={{ fontWeight: "bold", marginBottom: "40px" }}>
             學經歷
