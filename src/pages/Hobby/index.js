@@ -1,9 +1,10 @@
 import classes from './index.module.sass'
 import { Box, Container, Typography, Grid } from '@mui/material'
+import { AppModal } from '../../components'
 import clsx from 'clsx'
-
+import { useRef } from 'react'
 const Hobby = () => {
-
+  const appModal = useRef(null)
   return (
     <Box component="section">
       <div className={classes.hobbySection}>
@@ -12,8 +13,12 @@ const Hobby = () => {
             興趣
           </Typography>
 
+          <AppModal ref={appModal}></AppModal>
+
           <Grid container spacing={4}>
-            <Grid item xs={6}>
+            <Grid item xs={6} onClick={() => {
+              appModal.current.handleOpen()
+            }}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.poolImg])} />
                 <div className={classes.overlay}>

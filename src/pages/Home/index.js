@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <TopIcon />
-      <Box component="section">
+      <Box component="section" sx={{ overFlow: "hidden" }} >
 
         <div className={`${classes.home} h-100vh`}>
           <Container maxWidth="lg" className="h-100" style={{ position: 'relative' }}>
