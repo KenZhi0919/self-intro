@@ -20,7 +20,7 @@ const Carousel = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img src={require('../../static/Pool.jpg')} /></SwiperSlide>
+        {/* <SwiperSlide><img src={require('../../static/Pool.jpg')} /></SwiperSlide> */}
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
