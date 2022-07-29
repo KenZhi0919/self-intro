@@ -13,10 +13,12 @@ const Hobby = () => {
             興趣
           </Typography>
 
-          <AppModal ref={appModal}></AppModal>
+          <AppModal ref={appModal}>
+            123
+          </AppModal>
 
           <Grid container spacing={4}>
-            <Grid item xs={6} onClick={() => {
+            <Grid item xs={4} onClick={() => {
               appModal.current.handleOpen()
             }}>
               <div className={classes.imgBox}>
@@ -28,7 +30,7 @@ const Hobby = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.dumbbelImg])} />
                 <div className={classes.overlay}>
@@ -38,7 +40,7 @@ const Hobby = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.gamingImg])} />
                 <div className={classes.overlay}>
@@ -48,7 +50,27 @@ const Hobby = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
+              <div className={classes.imgBox}>
+                <div className={clsx([classes.img, classes.animeImg])} />
+                <div className={classes.overlay}>
+                  <div className={classes.overlayText}>
+                    動漫
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={4}>
+              <div className={classes.imgBox}>
+                <div className={clsx([classes.img, classes.animeImg])} />
+                <div className={classes.overlay}>
+                  <div className={classes.overlayText}>
+                    動漫
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={4}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.animeImg])} />
                 <div className={classes.overlay}>

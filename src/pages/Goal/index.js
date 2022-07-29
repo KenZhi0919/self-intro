@@ -1,27 +1,26 @@
 import classes from './index.module.sass'
 import { Box, Container, Typography, Grid } from '@mui/material'
 import BuildIcon from '@mui/icons-material/Build'
-import { apiGetGoal } from '../../api/apiGoal'
-import { useEffect, useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check'
 import useStore from '../../store/store'
 
+const goalData = [
+  {
+    "title": "短期目標",
+    "goalList": ["認識大家", "熟悉 React"]
+  },
+  {
+    "title": "中期目標",
+    "goalList": ["認識大家", "熟悉 React", "了解專案"]
+  },
+  {
+    "title": "長期目標",
+    "goalList": ["認識大家", "熟悉 React", "學習更多專案需要的技術"]
+  }
+]
+
 const Goal = () => {
-
-  const [goalData, setGoalData] = useState([])
   const useAnimation = useStore(state => state.useAnimation)
-
-  useEffect(() => {
-    const fetchGoal = async () => {
-      try {
-        const { data } = await apiGetGoal()
-        setGoalData(data)
-      } catch (e) {
-        console.log(e)
-      }
-    }
-    fetchGoal()
-  }, [])
 
   window.addEventListener('scroll', () => {
     const scroll = document.querySelector(`.${classes.goalSection}`)

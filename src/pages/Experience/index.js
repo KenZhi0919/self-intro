@@ -1,27 +1,44 @@
 import classes from './index.module.sass'
 import { Box, Container, Typography, Grid } from '@mui/material'
 import { FlowLine } from '../../components'
-import { useEffect, useState } from 'react'
-import { apiGetExperience } from '../../api/apiExperience'
+import { useState } from 'react'
 import useStore from '../../store/store'
 
+const experienceList =  [
+  {
+    "experience": "雲林科技大學",
+    "positionName": "資訊管理系",
+    "period": "2015-2019",
+    "des": "",
+    "content": [
+      { "title": "社團", "item": ["撞球社", "滑板社", "健身社"] },
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/National_Yunlin_University_of_Science_and_Technology_logo.svg/1200px-National_Yunlin_University_of_Science_and_Technology_logo.svg.png"
+  },
+  {
+    "experience": "昕力資訊",
+    "positionName": "前端工程師",
+    "period": "2020-2022",
+    "content": [
+      {
+        "title": "專案",
+        "item": ["國泰PMD績效管理系統", "昕力資訊OKR系統", "國泰職務適配系統"]
+      }
+    ],
+    "image": "https://www.tpisoftware.com/images/header/logo-tw.svg"
+  },
+  {
+    "experience": "奕樂科技",
+    "positionName": "前端工程師",
+    "period": "2022-迄今",
+    "content": [{ "title": "練習專案", "item": ["自我介紹網站"] }],
+    "image": ""
+  }
+]
+
 const Experience = () => {
-  const [experienceList, setExperienceList] = useState([{ experience: '', positionName: '', period: '', content: [], image: '' }])
   const [flowIndex, setFlowIndex] = useState(0)
   const useAnimation = useStore(state => state.useAnimation)
-
-
-  useEffect(() => {
-    const fetchExperience = async () => {
-      try {
-        const { data } = await apiGetExperience()
-        setExperienceList(data)
-      } catch (e) {
-        console.log(e)
-      }
-    }
-    fetchExperience()
-  }, [])
 
   window.addEventListener('scroll', () => {
     const scroll = document.querySelector(`.${classes.experienceSection}`)

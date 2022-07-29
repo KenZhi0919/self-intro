@@ -2,22 +2,12 @@ import classes from './index.module.sass'
 import { Box, Container, Avatar, Grid, Typography } from '@mui/material'
 import { Intro, Hobby, Experience, Goal, } from '../../pages'
 import { TopIcon } from '../../components'
-import { useEffect } from 'react'
-import useStore from '../../store/store.js'
 
 const Home = () => {
-  const fetchUser = useStore(state => state.setUser)
-  const user = useStore(state => state.user)
-
-  useEffect(() => {
-    fetchUser()
-  }, [fetchUser])
-
   return (
     <>
       <TopIcon />
       <Box component="section" sx={{ overFlow: "hidden" }} >
-
         <div className={`${classes.home} h-100vh`}>
           <Container maxWidth="lg" className="h-100" style={{ position: 'relative' }}>
             {/* content start */}
@@ -28,11 +18,11 @@ const Home = () => {
                 </Grid>
                 <Grid item xs={8} className={classes.title} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }}>
-                    {user.name} {user.enName}
+                    陳健誌 Ken Chen
                   </Typography>
 
                   <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }}>
-                    {user.positionName}
+                    Front-End Engineer
                   </Typography>
 
                 </Grid>
@@ -47,7 +37,7 @@ const Home = () => {
                   <Grid item xs={4} className={classes.description} sx={{ textAlign: "end" }}>
                     <p className={classes.descriptionTitle}>Email</p>
                     <p className={classes.descriptionContent}>
-                      <u>{user.email}</u>
+                      <u>z121356777@gmail.com</u>
                     </p>
                   </Grid>
                 </Grid>
