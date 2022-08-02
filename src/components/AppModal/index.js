@@ -4,7 +4,7 @@ import Box from "@mui/material/Box"
 import Modal from "@mui/material/Modal"
 import Fade from "@mui/material/Fade"
 import { useImperativeHandle } from 'react'
-// import Carousel from '../Carousel'
+import Carousel from '../Carousel'
 
 const style = {
   position: "absolute",
@@ -18,8 +18,15 @@ const style = {
 }
 const AppModal = React.forwardRef((props, ref) => {
   const [open, setOpen] = React.useState(false)
-  const handleOpen = () => setOpen(true)
+
+  const [type, setType] = React.useState('')
+
+  const handleOpen = (type) => {
+    setOpen(true)
+    setType(type)
+  }
   const handleClose = () => setOpen(false)
+
   useImperativeHandle(ref, () => {
     return {
       handleOpen
@@ -39,8 +46,15 @@ const AppModal = React.forwardRef((props, ref) => {
     >
       <Fade in={open}>
         <Box sx={style}>
-          {/* <Carousel></Carousel> */}
-          {/* <iframe width="1200" height="600" src="https://www.youtube.com/embed/BbvrEBjrBW4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+          { type === 'pool' && 
+            <iframe width="1200" height="600" src="https://www.youtube.com/embed/P2SvpU6E4HI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          }
+          { type === 'barbell' &&
+            <Carousel type='barbell' style={{width: '800px'}} />
+          }
+          { type === 'skate' &&
+            <iframe width="1200" height="600" src="https://www.youtube.com/embed/M8Wo5_yiGu0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          }
         </Box>
       </Fade>
     </Modal>

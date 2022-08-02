@@ -9,7 +9,7 @@ import "swiper/css/navigation"
 // import required modules
 import { Pagination, Navigation } from "swiper"
 
-const Carousel = () => {
+const Carousel = ({type}) => {
   return (
     <>
       <Swiper
@@ -19,16 +19,15 @@ const Carousel = () => {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
+        style={{width: '600px'}}
       >
-        {/* <SwiperSlide><img src={require('../../static/Pool.jpg')} /></SwiperSlide> */}
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {
+          type === 'barbell' &&
+          <>
+            <SwiperSlide><img src={require('../../static/Bench.jpg')} /></SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+          </>
+        }
       </Swiper>
     </>
   )

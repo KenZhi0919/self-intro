@@ -14,63 +14,46 @@ const Hobby = () => {
           </Typography>
 
           <AppModal ref={appModal}>
-            123
           </AppModal>
 
           <Grid container spacing={4}>
-            <Grid item xs={4} onClick={() => {
-              appModal.current.handleOpen()
+            <Grid item xs={6} onClick={() => {
+              appModal.current.handleOpen('skate')
+            }}>
+              <div className={classes.imgBox}>
+                <div className={clsx([classes.img, classes.fallImg])} />
+                <div className={classes.overlay}>
+                  <div className={classes.overlayText}>
+                    滑倒
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={6} onClick={() => {
+              appModal.current.handleOpen('pool')
             }}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.poolImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
-                    撞球
+                    撿球
                   </div>
                 </div>
               </div>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6} onClick={() => {
+              appModal.current.handleOpen('barbell')
+            }}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.dumbbelImg])} />
                 <div className={classes.overlay}>
                   <div className={classes.overlayText}>
-                    健身
+                    重訓
                   </div>
                 </div>
               </div>
             </Grid>
-            <Grid item xs={4}>
-              <div className={classes.imgBox}>
-                <div className={clsx([classes.img, classes.gamingImg])} />
-                <div className={classes.overlay}>
-                  <div className={classes.overlayText}>
-                    電玩
-                  </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
-              <div className={classes.imgBox}>
-                <div className={clsx([classes.img, classes.animeImg])} />
-                <div className={classes.overlay}>
-                  <div className={classes.overlayText}>
-                    動漫
-                  </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
-              <div className={classes.imgBox}>
-                <div className={clsx([classes.img, classes.animeImg])} />
-                <div className={classes.overlay}>
-                  <div className={classes.overlayText}>
-                    動漫
-                  </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <div className={classes.imgBox}>
                 <div className={clsx([classes.img, classes.animeImg])} />
                 <div className={classes.overlay}>

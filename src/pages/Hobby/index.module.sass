@@ -6,6 +6,7 @@
     position: relative
     overflow: hidden
     border-radius: 12px
+    cursor: pointer
     &:hover .img
       transform: scale(1.1)
     .img 
@@ -15,14 +16,17 @@
       background-repeat: no-repeat
       background-size: cover
       &.poolImg 
-        // background-image: url("../../static/Pool.jpg")
-        background-image: url("../../static/Dumbbel.jpg")
+        background-image: url("../../static/Pool.jpg")
       &.dumbbelImg 
         background-image: url("../../static/Dumbbel.jpg")
       &.gamingImg 
         background-image: url("../../static/Gaming.jpg")
       &.animeImg 
         background-image: url("../../static/Anime.png")
+      &.fallImg 
+        background-image: url("../../static/Breaking.jpg")
+        background-size: 100% auto
+        background-position: 20% 40%
     .overlay
       position: absolute
       width: 100%

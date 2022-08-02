@@ -4,7 +4,6 @@ import { Stack, Stepper, Step, StepLabel } from "@mui/material"
 
 import SchoolIcon from '@mui/icons-material/School'
 import GroupAddIcon from "@mui/icons-material/GroupAdd"
-import ApartmentIcon from '@mui/icons-material/Apartment'
 
 import StepConnector, {
   stepConnectorClasses
@@ -45,8 +44,8 @@ function ColorlibStepIcon(props) {
 
   const icons = {
     1: <SchoolIcon />,
-    2: <GroupAddIcon />,
-    3: <ApartmentIcon />
+    2: <SchoolIcon />,
+    3: <GroupAddIcon />,
   }
 
   return (
@@ -59,9 +58,9 @@ function ColorlibStepIcon(props) {
 }
 
 const steps = [
+  "益民國小",
   "雲林科技大學",
   "昕力資訊",
-  "亦樂科技"
 ]
 
 export default function FlowLine({ flowIndex, setFlowIndex }) {
@@ -80,7 +79,7 @@ export default function FlowLine({ flowIndex, setFlowIndex }) {
         {steps.map((label, index) => (
           <Step key={index}>
             <StepLabel StepIconComponent={ColorlibStepIcon} onClick={handleStep(index)} sx={{ cursor: "pointer" }}>
-              {label}
+              <span style={{fontSize: '18px'}}>{label}</span>
             </StepLabel>
           </Step>
         ))}

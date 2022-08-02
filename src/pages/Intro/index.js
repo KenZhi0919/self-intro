@@ -19,16 +19,14 @@ const Intro = () => {
               <Typography variant="h2" component="div" sx={{ fontWeight: "bold" }}>
                 關於我
               </Typography>
-              <Typography variant="subtitle1" component="div" sx={{ margin: '40px 0', whiteSpace: 'pre-wrap' }}>
-                我是陳健誌，今年25歲，畢業於雲林科技大學資訊管理系，已有兩年的前端工程師經驗，在前公司主要是寫 Vue，目前正持續努力學習 React 中，期望自己在將來可以學習更多不同的框架及技術，朝著資深工程師的方向邁進。平常的興趣是打撞球、健身、打電玩和看動畫，如果有相同興趣的朋友歡迎找我切磋切磋，很開心能夠加入弈樂這個大家庭。
+              <Typography variant="h6" component="div" sx={{ margin: '40px 0', whiteSpace: 'pre-wrap' }}>
+                我是陳健誌，今年 25 歲，畢業於雲林科技大學資訊管理系，已有兩年的前端工程師經驗，在前公司主要是寫 Vue，目前正持續努力學習 React 中，期望自己在將來可以學習更多不同的框架及技術，朝著資深工程師的方向邁進。平常的興趣是打撞球、健身、打電玩和看動畫，如果有相同興趣的朋友歡迎找我切磋切磋，很開心能夠加入弈樂這個大家庭。
               </Typography>
-              {/* <Typography variant="h5" component="div" sx={{ color: '#ff8553', fontWeight: "bold" }} gutterBottom>
-                &quot;做自己，享受人生&quot;
-              </Typography> */}
+
             </Grid>
             <Grid item xs={6}>
               <div className="h-100 d-flex justify-center align-center">
-                <img className={classes.introImage} src={require('../../static/intro.jpg')} />
+                <img className={classes.introImage} src={require('../../static/School.jpg')} />
               </div>
             </Grid>
 

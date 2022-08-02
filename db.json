@@ -11,6 +11,17 @@
   },
   "experience": [
     {
+      "experience": "益民國小",
+      "positionName": "資訊管理系",
+      "period": "2015-2019",
+      "des": "",
+      "content": [
+        { "title": "社團", "item": ["撞球社", "滑板社", "健身社"] },
+        { "title": "專題", "item": ["默陌 Detector"] }
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/National_Yunlin_University_of_Science_and_Technology_logo.svg/1200px-National_Yunlin_University_of_Science_and_Technology_logo.svg.png"
+    },
+    {
       "experience": "雲林科技大學",
       "positionName": "資訊管理系",
       "period": "2015-2019",

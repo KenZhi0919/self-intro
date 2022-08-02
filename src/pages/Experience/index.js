@@ -6,12 +6,23 @@ import useStore from '../../store/store'
 
 const experienceList =  [
   {
+    "experience": "益民國小",
+    "positionName": "",
+    "period": "",
+    "des": "",
+    "content": [
+      { "title": "校隊", "item": ["巧固球", "皮影戲"] },
+    ],
+    "image": "https://storage.googleapis.com/school-parenting-com-tw/school/uploads/badges/4351272e8512c5186943f470eb9c4b0d23f73e9a.jpeg"
+  },
+  {
     "experience": "雲林科技大學",
     "positionName": "資訊管理系",
     "period": "2015-2019",
     "des": "",
     "content": [
       { "title": "社團", "item": ["撞球社", "滑板社", "健身社"] },
+      { "title": "打工", "item": ["麥當勞"] },
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/National_Yunlin_University_of_Science_and_Technology_logo.svg/1200px-National_Yunlin_University_of_Science_and_Technology_logo.svg.png"
   },
@@ -27,13 +38,6 @@ const experienceList =  [
     ],
     "image": "https://www.tpisoftware.com/images/header/logo-tw.svg"
   },
-  {
-    "experience": "奕樂科技",
-    "positionName": "前端工程師",
-    "period": "2022-迄今",
-    "content": [{ "title": "練習專案", "item": ["自我介紹網站"] }],
-    "image": ""
-  }
 ]
 
 const Experience = () => {
@@ -62,7 +66,7 @@ const Experience = () => {
             <Grid item xs={12}>
               <div style={{ padding: "50px 100px" }}>
                 <div className="d-flex">
-                  <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginRight: "10px" }}>
+                  <Typography variant="h4" component="div" sx={{ fontWeight: "bold", marginRight: "10px" }}>
                     {experienceList[flowIndex].positionName}
                   </Typography>
                   <div className="d-flex align-center" style={{ color: "#949494" }}>
@@ -74,10 +78,10 @@ const Experience = () => {
                     <div className="d-flex">
                       {experienceList && experienceList[flowIndex].content.map((el, index) => (
                         <div key={index} style={{ "marginLeft": "50px" }}>
-                          <Typography variant="h6" component="div" sx={{ fontWeight: "bold", mt: 2 }}>
+                          <Typography variant="h5" component="div" sx={{ fontWeight: "bold", mt: 2 }}>
                             {el.title}
                           </Typography>
-                          <Typography variant="subtitle1" component="div" sx={{ ml: 3 }}>
+                          <Typography variant="h6" component="div" sx={{ ml: 3 }}>
                             <ul>
                               {el.item && el.item.map((item, itemIndex) => (
                                 <li key={itemIndex}>{item}</li>

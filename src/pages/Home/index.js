@@ -2,8 +2,12 @@ import classes from './index.module.sass'
 import { Box, Container, Avatar, Grid, Typography } from '@mui/material'
 import { Intro, Hobby, Experience, Goal, } from '../../pages'
 import { TopIcon } from '../../components'
+import 'animate.css'
+import { useState } from 'react'
 
 const Home = () => {
+  const [showAKA , setShowAKA] = useState(false)
+  const [showSecond , setShowSecond] = useState(false)
   return (
     <>
       <TopIcon />
@@ -17,9 +21,36 @@ const Home = () => {
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: '290px', height: '290px' }} />
                 </Grid>
                 <Grid item xs={8} className={classes.title} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }}>
-                    陳健誌 Ken Chen
+                  <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }} onClick={() => {
+                    setShowAKA(true)
+                  }}>
+                    陳健誌 Ken
                   </Typography>
+
+                  { showAKA && !showSecond &&
+                      <Typography 
+                        className='animate__animated animate__bounceInRight' 
+                        variant="h3" 
+                        component="div" 
+                        sx={{ fontWeight: "bold" }}
+                        onClick={() => {
+                          setShowSecond(true)
+                        }}
+                      >
+                        aka 菜尾的同學
+                      </Typography>
+                    }
+
+                    { showSecond && 
+                      <Typography 
+                        className='animate__animated animate__bounceInRight' 
+                        variant="h3" 
+                        component="div" 
+                        sx={{ fontWeight: "bold" }}
+                      >
+                        aka 第一次騎車就騎到乾嘔的菜雞
+                      </Typography>
+                    }
 
                   <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }}>
                     Front-End Engineer
@@ -28,14 +59,14 @@ const Home = () => {
                 </Grid>
                 <Grid container sx={{ marginTop: "100px" }}>
                   <Grid item xs={4} className={classes.description}>
-                    <p className={classes.descriptionTitle}>Design For</p>
-                    <p className={classes.descriptionContent}>Web</p>
+                    <p className={classes.descriptionTitle}>Instagram</p>
+                    <p className={classes.descriptionContent}>ken_zhiii</p>
                   </Grid>
 
                   <Grid item xs={4} />
 
                   <Grid item xs={4} className={classes.description} sx={{ textAlign: "end" }}>
-                    <p className={classes.descriptionTitle}>Email</p>
+                  <p className={classes.descriptionTitle}>Email</p>
                     <p className={classes.descriptionContent}>
                       <u>z121356777@gmail.com</u>
                     </p>
@@ -48,8 +79,8 @@ const Home = () => {
         </div >
       </Box >
       <Intro />
-      <Experience />
       <Hobby />
+      <Experience />
       <Goal />
     </>
   )
