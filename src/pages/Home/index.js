@@ -1,5 +1,5 @@
 import classes from './index.module.sass'
-import { Box, Container, Avatar, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 import { Intro, Hobby, Experience, Goal, } from '../../pages'
 import { TopIcon } from '../../components'
 import 'animate.css'
@@ -18,7 +18,6 @@ const Home = () => {
             <div className="h-100 d-flex align-center">
               <Grid container sx={{ marginTop: "50px" }}>
                 <Grid item xs={4}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: '290px', height: '290px' }} />
                 </Grid>
                 <Grid item xs={8} className={classes.title} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }} onClick={() => {

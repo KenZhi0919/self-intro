@@ -26,7 +26,7 @@ const Intro = () => {
             </Grid>
             <Grid item xs={6}>
               <div className="h-100 d-flex justify-center align-center">
-                <img className={classes.introImage} src={require('../../static/School.jpg')} />
+                <img className={classes.introImage} src={require('../../static/team.jpg')} />
               </div>
             </Grid>
 

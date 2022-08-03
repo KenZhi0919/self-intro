@@ -43,11 +43,11 @@ const Goal = () => {
                 <div className={classes.goalBox} style={{ borderRight: index + 1 === goalData.length ? '' : '1px solid #e8e8e8' }}>
                   <div className={classes.goalTitleRow}>
                     <BuildIcon></BuildIcon>
-                    <Typography variant="h5" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
+                    <Typography variant="h4" component="div" sx={{ fontWeight: "bold", marginLeft: "10px" }}>
                       {el.title}
                     </Typography>
                   </div>
-                  <Typography variant="subtitle1" component="div">
+                  <Typography variant="h6" component="div">
                     <ul>
                       {el.goalList && el.goalList.map((el, index) => (
                         <li key={index}>

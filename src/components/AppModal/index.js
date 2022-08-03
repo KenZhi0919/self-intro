@@ -50,10 +50,16 @@ const AppModal = React.forwardRef((props, ref) => {
             <iframe width="1200" height="600" src="https://www.youtube.com/embed/CRtwvzCyI7Q" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           }
           { type === 'barbell' &&
-            <Carousel type='barbell' style={{width: '800px'}} />
+            <Carousel type='barbell' />
           }
           { type === 'skate' &&
-            <iframe width="1200" height="600" src="https://www.youtube.com/embed/M8Wo5_yiGu0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <Carousel type='skate' />
+          }
+          { type === 'ball' &&
+            <Carousel type='ball' />
+          }
+          { type === 'doll' &&
+            <Carousel type='doll' />
           }
         </Box>
       </Fade>

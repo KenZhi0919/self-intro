@@ -3,6 +3,8 @@ import { Box, Container, Typography, Grid } from '@mui/material'
 import { FlowLine } from '../../components'
 import { useState } from 'react'
 import useStore from '../../store/store'
+import { AppModal } from '../../components'
+import { useRef } from 'react'
 
 const experienceList =  [
   {
@@ -50,7 +52,7 @@ const Experience = () => {
       scroll.classList.add("active")
     }
   })
-
+  const appModal = useRef(null)
   return (
     <Box component="section">
       <div className={`${classes.experienceSection} ${useAnimation ? 'moveInLeft' : ''}`}>
@@ -84,7 +86,15 @@ const Experience = () => {
                           <Typography variant="h6" component="div" sx={{ ml: 3 }}>
                             <ul>
                               {el.item && el.item.map((item, itemIndex) => (
-                                <li key={itemIndex}>{item}</li>
+                                <li key={itemIndex} onClick={() => {
+                                  if(item === '巧固球'){
+                                    appModal.current.handleOpen('ball')
+                                  } else if (item === '皮影戲'){
+                                    appModal.current.handleOpen('doll')
+                                  }
+                                }}>
+                                  {item}
+                                </li>
                               ))}
                             </ul>
                           </Typography>
@@ -103,6 +113,7 @@ const Experience = () => {
           </Grid>
         </Container>
       </div >
+      <AppModal ref={appModal}></AppModal>
     </Box >
   )
 }
