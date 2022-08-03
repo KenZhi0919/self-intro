@@ -83,7 +83,7 @@ const Experience = () => {
                           <Typography variant="h5" component="div" sx={{ fontWeight: "bold", mt: 2 }}>
                             {el.title}
                           </Typography>
-                          <Typography variant="h6" component="div" sx={{ ml: 3 }}>
+                          <Typography variant="h6" component="div" sx={{ ml: 3 ,cursor: 'pointer' }}>
                             <ul>
                               {el.item && el.item.map((item, itemIndex) => (
                                 <li key={itemIndex} onClick={() => {

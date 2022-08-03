@@ -17,9 +17,9 @@ const Home = () => {
             {/* content start */}
             <div className="h-100 d-flex align-center">
               <Grid container sx={{ marginTop: "50px" }}>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                 </Grid>
-                <Grid item xs={8} className={classes.title} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <Grid item xs={9} className={classes.title} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: '300px' }}>
                   <Typography variant="h3" component="div" sx={{ fontWeight: "bold" }} onClick={() => {
                     setShowAKA(true)
                   }}>
