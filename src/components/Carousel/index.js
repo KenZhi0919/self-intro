@@ -19,13 +19,14 @@ const Carousel = ({type}) => {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-        style={{width: '600px'}}
+        style={{width: '600px', height:'700px'}}
       >
         {
           type === 'barbell' &&
           <>
             <SwiperSlide><img src={require('../../static/Bench.jpg')} /></SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide><img src={require('../../static/leg.jpg')} /></SwiperSlide>
+            <SwiperSlide><img src={require('../../static/back.jpg')} /></SwiperSlide>
           </>
         }
       </Swiper>
