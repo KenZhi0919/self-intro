@@ -32,7 +32,7 @@ const Goal = () => {
   return (
     <Box component="section" sx={{ overflow: 'hidden' }}>
       <div className={`${classes.goalSection} ${useAnimation ? 'moveInRight' : ''}`}>
-        <Container maxWidth="lg" className="h-100" sx={{ position: "relative" }}>
+        <Container maxWidth="lg" className="h-100" sx={{ position: "relative", maxWidth: '1000px !important' }}>
           <Typography variant="h2" component="div" sx={{ fontWeight: "bold", marginBottom: "40px" }}>
             目標
           </Typography>
